@@ -1,0 +1,64 @@
+.social {
+  display: flex;
+  margin: 0 -5px;
+  a {
+    width: auto;
+    height: 20px;
+    display: block;
+    margin: 0 5px;
+    line-height: 1;
+    svg {
+      height: 100%;
+      width: auto;
+      .svg-path{
+        fill: #724b2c;
+        transition: .3s;
+      }
+    }
+
+    &:hover {
+      svg {
+        .svg-path{
+          fill: #a56123;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 40px 0;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, #150a02 0%,#a56123 50%,#160a02 100%);
+    background-size: 106%;
+    background-position: center;
+    position: absolute;
+    top: 0;
+  }
+  &__contacts {
+    color: #724b2c;
+    font-size: 1.5rem;
+    font-family: $font-family-text;
+    transition: .3s;
+    &:hover {
+      color: #a56123;
+    }
+  }
+
+  @include mediamax(525px) {
+    padding: 25px 0;
+   &-row{
+     flex-direction: column-reverse;
+     align-items: center;
+     margin: -10px 0;
+   }
+    &-col {
+      margin: 10px 0;
+    }
+  }
+}

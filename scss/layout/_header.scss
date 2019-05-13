@@ -1,0 +1,111 @@
+.logo{
+  max-width: 300px;
+  margin-top: 15px;
+   img {
+     width: 100%;
+     height: auto;
+   }
+}
+
+.header {
+  position: relative;
+  z-index: 10;
+    &__nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      padding-bottom: 20px;
+      //border-bottom: 1px solid #87501a;
+      font-family: $font-family-caption;
+      ul {
+        display: flex;
+        list-style: none;
+        margin: 0 -20px;
+        padding: 0;
+        li {
+          margin: 0 20px;
+          font-size: 2rem;
+          font-weight: 600;
+          a {
+            color: #e6a353;
+            transition: .3s;
+            cursor: pointer;
+            &:hover {
+              text-shadow: 0 0 47px #d88556, 0 0 0 #7a350b;
+            }
+          }
+        }
+      }
+
+      @include mediamax(525px) {
+        margin-top: 30px;
+        padding-bottom: 12px;
+        ul {
+          margin: 0 -10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          li {
+            margin: 0 10px;
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+  &::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, #150a02 0%,#a56123 50%,#160a02 100%);
+    background-size: 106%;
+    background-position: center;
+  }
+}
+
+.lang-switch {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  opacity: 0.4;
+  transition: .3s;
+  &__container {
+    margin: 0 3px;
+  }
+  input[name='lang'] {
+    display: none;
+  }
+  input[name='lang'] + label {
+    color: #f1b53d;
+    cursor: pointer;
+    background: url("../images/lang-btn.png") no-repeat;
+    width: 30px;
+    height: 15px;
+    opacity: 0.3;
+    transition: .3s;
+  }
+
+  input[name='lang']#lang-en + label {
+    background-position: bottom center;
+  }
+
+
+  input[name='lang']#lang-ru + label {
+    background-position: top center;
+  }
+
+  input[name='lang']:checked + label {
+    color: #f10005;
+    opacity: 0.9;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @include mediamax(525px) {
+    top: 30px;
+  }
+}
+

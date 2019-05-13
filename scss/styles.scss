@@ -1,0 +1,26 @@
+/*ABSTRACTS*/
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+/*FONTS*/
+@import "base/fonts";
+
+
+/*----------BOOTSTRAP----------*/
+@import "vendors/bootstrap-my-build";
+
+
+/*---------LIGHT GALLERY---------*/
+@import "vendors/lightgallery/lightgallery";
+
+/*----------CUSTOM STYLES----------*/
+/*BASE*/
+@import "base/common";
+@import "base/bootstrap-reset";
+@import "base/helper";
+
+
+/*LAYOUT*/
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
